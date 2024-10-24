@@ -47,14 +47,19 @@ const Contact = () => {
 
   return (
     <section className="c-space my-20" id="contact">
-        <h3 className="head-text text-center">Contact Me</h3>
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
-      <img src="/assets/terminal.png" alt="terminal-bg" className="absolute inset-0 min-h-screen" />
+      <h3 className="head-text text-center">Contact Me</h3>
+      <div className="relative min-h-screen flex items-center justify-center flex-col flex-wrap">
+        <img
+          src="/assets/terminal.png"
+          alt="terminal-bg"
+          className="absolute inset-0 min-h-screen hidden sm:block"
+        />
+
 
         <div className="contact-container flex flex-col items-center p-5 bg-opacity-90 rounded-lg shadow-lg max-w-xl w-full overflow-hidden">
           <h3 className="head-text text-center">Let's talk</h3>
           <p className="text-lg text-white-600 mt-3 text-center">
-            I'm always open to new opportunities, collaborations, and exciting projects. Whether you're looking to discuss a job opportunity, a freelance project, or just want to connect and share ideas, feel free to reach out! Let's build something great together.
+            Feel free to reach out! Let's build something great together.
           </p>
 
           <form ref={form} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7 w-full">
