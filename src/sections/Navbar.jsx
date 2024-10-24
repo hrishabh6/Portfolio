@@ -8,7 +8,7 @@ const NavItems = () => {
         <ul className='nav-ul'>
             <li className='nav-li'>
                 <NavLink
-                    to="/"
+                    to="/#home"
                     className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
                 >
                     Home
@@ -16,7 +16,7 @@ const NavItems = () => {
             </li>
             <li className='nav-li'>
                 <NavLink
-                    to="/about"
+                    to="/#about"
                     className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
                 >
                     About
@@ -24,7 +24,7 @@ const NavItems = () => {
             </li>
             <li className='nav-li'>
                 <NavLink
-                    to="/skills"
+                    to="/#about"
                     className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
                 >
                     Skills
@@ -32,7 +32,7 @@ const NavItems = () => {
             </li>
             <li className='nav-li'>
                 <NavLink
-                    to="/projects"
+                    to="/#projects"
                     className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
                 >
                     Projects
@@ -40,7 +40,7 @@ const NavItems = () => {
             </li>
             <li className='nav-li'>
                 <NavLink
-                    to="/contact"
+                    to="/#contact"
                     className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
                 >
                     Contact

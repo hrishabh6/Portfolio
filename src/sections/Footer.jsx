@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <section className='pt-20 pb-3 c-space border-t border-black-300 flex justify-between items-center flex-wrap gap-5'>
+    <section className='pt-20 pb-3 c-space border-t border-black-300 flex justify-between items-center flex-wrap gap-5' id='footer'>
       <div className='text-white-500 flex gap-2'>
         <p>Terms and conditions</p>
         <p>|</p>

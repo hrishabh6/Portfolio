@@ -1,24 +1,41 @@
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import Navbar from './sections/Navbar';
 import Main from './sections/Main';
 import About from './sections/About';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
+
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   return (
-    <Router>
-      <main className='max-w-7xl mx-auto'>
+    <main className='max-w-7xl mx-auto'>
       <Navbar />
-      <Main />
-      <About/>
-      <Projects/>
-      <Contact/>
-      <Footer/>
-      </main>
-    </Router>
+      <Main id="main" />
+      <About id="about" />
+      <Projects id="projects" />
+      <Contact id="contact" />
+      <Footer />
+    </main>
   );
 }
 
-export default App;
+const Wrapper = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default Wrapper;
