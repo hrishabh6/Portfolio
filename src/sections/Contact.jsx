@@ -4,11 +4,44 @@ import emailjs from '@emailjs/browser';
 const Contact = () => {
   const form = useRef();
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
   const [forms, setForms] = useState({
     name: '',
     email: '',
     message: ''
   });
+
+  const validateEmail = (email) => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email validation regex
+    return emailPattern.test(email) && email.length >= 5;
+  };
+
+  const validateName = (name) => {
+    const namePattern = /^[a-zA-Z\s]+$/; // Only letters and spaces allowed
+    return namePattern.test(name);
+  };
+
+  const validateMessage = (message) => {
+    return message.trim().split(/\s+/).length >= 5; // Check if the message has at least 5 words
+  };
+  
+  const handleValidation = () => {
+    const validationErrors = {};
+    
+    if (!validateName(forms.name)) {
+      validationErrors.name = 'Name must contain only letters and spaces.';
+    }
+    if (!validateEmail(forms.email)) {
+      validationErrors.email = 'Please enter a valid email (at least 5 characters long).';
+    }
+    if (!validateMessage(forms.message)) {
+      validationErrors.message = 'Message must be at least 5 words long.';
+    }
+    
+    setErrors(validationErrors);
+    
+    return Object.keys(validationErrors).length === 0;
+  };
 
   const handleChange = ({ target: { name, value } }) => {
     setForms({ ...forms, [name]: value });
@@ -16,8 +49,10 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!handleValidation()) return; // Stop submission if validation fails
+    
     setLoading(true);
-
+    
     try {
       await emailjs.send(
         'service_qjcvzbh',
@@ -55,7 +90,6 @@ const Contact = () => {
           className="absolute inset-0 min-h-screen hidden sm:block"
         />
 
-
         <div className="contact-container flex flex-col items-center p-5 bg-opacity-90 rounded-lg shadow-lg max-w-xl w-full overflow-hidden">
           <h3 className="head-text text-center">Let's talk</h3>
           <p className="text-lg text-white-600 mt-3 text-center">
@@ -74,6 +108,7 @@ const Contact = () => {
                 className="field-input w-full"
                 placeholder="ex., John Doe"
               />
+              {errors.name && <span className="text-red-500">{errors.name}</span>}
             </label>
 
             <label className="space-y-3">
@@ -87,6 +122,7 @@ const Contact = () => {
                 className="field-input w-full"
                 placeholder="ex., johndoe@gmail.com"
               />
+              {errors.email && <span className="text-red-500">{errors.email}</span>}
             </label>
 
             <label className="space-y-3">
@@ -96,9 +132,10 @@ const Contact = () => {
                 value={forms.message}
                 onChange={handleChange}
                 required
-                className="field-input w-full h-20 md:h-32 resize-none" // Adjust height here for mobile and larger screens
+                className="field-input w-full h-20 md:h-32 resize-none"
                 placeholder="Share your thoughts or inquiries..."
               />
+              {errors.message && <span className="text-red-500">{errors.message}</span>}
             </label>
 
             <button className="field-btn" type="submit" disabled={loading}>
