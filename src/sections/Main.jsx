@@ -34,48 +34,45 @@ const Main = () => {
 
     return (
         <>
-            {/* 3D Model Section */}
-            <section className="min-h-screen flex flex-col relative m-3">
-                {/* Text and Intro Section */}
-                <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 z-10">
-                    <p className="text-white text-center text-xl sm:text-3xl font-medium font-generalsans">
-                        Hi! I am Hrishabh Joshi <span className="waving-hand">&#128075;</span>
-                    </p>
-                    <p className="hero_tag text-gray_gradient">
-                        Building scalable and efficient Backend Systems
-                    </p>
-                </div>
+            <section className="min-h-screen w-full flex flex-col relative" id="home">
+      <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
+        <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
+          Hi, I am Hrishabh Joshi <span className="waving-hand">👋</span>
+        </p>
+        <p className="hero_tag text-gray_gradient">Building Efficient Websites
+        </p>
+      </div>
 
-                {/* 3D Canvas Section */}
-                <div className="w-full h-full absolute inset-0 z-0">
-                    <Canvas className="w-full h-full">
-                        <Suspense fallback={<CanvasLoader />}>
-                            <PerspectiveCamera makeDefault position={[0, 0, 20]} />
-                            <Camera isMobile={isMobile}>
-                                <HackerRoom
-                                    rotation={[0.10, -3.0, 0.00]}
-                                    position={sizes.deskPosition}
-                                    scale={sizes.deskScale}
-                                />
-                            </Camera>
-                            <group>
-                                <Target position={sizes.targetPosition} rotation={[0, Math.PI / 5, 0.00]} />
-                                <ReactLogo position={sizes.reactLogoPosition} />
-                                <Cube position={sizes.cubePosition} />
-                                <Rings position={sizes.ringPosition} />
-                            </group>
-                            <ambientLight intensity={1} />
-                            <directionalLight intensity={0.5} position={[10, 10, 10]} />
-                        </Suspense>
-                    </Canvas>
-                </div>
-            </section>
+      <div className="w-full h-full absolute inset-0">
+        <Canvas className="w-full h-full">
+          <Suspense fallback={<CanvasLoader />}>
+            {/* To hide controller */}
+            <Leva hidden />
+            <PerspectiveCamera makeDefault position={[0, 0, 30]} />
 
-            <div className="my-4 w-full flex justify-center">
-                <NavLink className="w-fit" to="#contact">
-                    <Button name="Let's Connect" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
-                </NavLink>
-            </div>
+            <Camera isMobile={isMobile}>
+              <HackerRoom scale={sizes.deskScale} position={sizes.deskPosition} rotation={[0.1, -Math.PI, 0]} />
+            </Camera>
+
+            <group>
+              <Target position={sizes.targetPosition} />
+              <ReactLogo position={sizes.reactLogoPosition} />
+              <Rings position={sizes.ringPosition} />
+              <Cube position={sizes.cubePosition} />
+            </group>
+
+            <ambientLight intensity={1} />
+            <directionalLight position={[10, 10, 10]} intensity={0.5} />
+          </Suspense>
+        </Canvas>
+      </div>
+
+      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+        <a href="#about" className="w-fit">
+          <Button name="Let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
+        </a>
+      </div>
+    </section>
 
 
         </>
