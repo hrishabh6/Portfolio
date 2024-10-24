@@ -76,25 +76,25 @@ const About = () => {
                 </div>
 
                 {/* Extra Section (hello world) */}
-                <div className='col-span-1'>
-                    <div className='grid-container'>
-                        <div className='rounded-3xl w-full sm:h-[326px] h-auto flex justify-center items-center'>
+                <div className="col-span-1 ">
+                    <div className="grid-container">
+                        <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
                             <Globe
-                                height={isMobile ? 326 : 426}
-                                width={isMobile ? 326 : 426}
-                                backgroundColor="rgba(0,0,0,0)"
+                                height={326}
+                                width={326}
+                                backgroundColor="rgba(0, 0, 0, 0)"
                                 backgroundImageOpacity={0.5}
-                                showAtmosphere={true}
-                                showGraticules={true}
+                                showAtmosphere
+                                showGraticules
                                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
                                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                                labelsData={[{ lat: 40, lng: -100, text: 'Rjieka, Croatia', color: 'white', size: 15 }]}
                             />
                         </div>
                         <div>
-                            <p className='grid-headtext'>I am based in Delhi, India &#x1F4CD;
-                            </p>
-                            <p className='grid-subtext'>I am open to work remotely across most of the timezones</p>
-                            <Button containerClass="w-full mt-10" name="Contact me" isBeam />
+                            <p className="grid-headtext">I am based in Delhi, India &#x1F4CD;</p>
+                            <p className="grid-subtext">I am open to work remotely across most of the timezones.</p>
+                            <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
                         </div>
                     </div>
                 </div>
