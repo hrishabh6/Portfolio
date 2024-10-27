@@ -3,13 +3,14 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom'; // Import NavLink
 
 
-const NavItems = () => {
+const NavItems = ({toggleMenu}) => {
     return (
         <ul className='nav-ul'>
             <li className='nav-li'>
                 <NavLink
                     to="/#home"
                     className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
+                    onClick={toggleMenu}
                 >
                     Home
                 </NavLink>
@@ -18,6 +19,7 @@ const NavItems = () => {
                 <NavLink
                     to="/#about"
                     className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
+                    onClick={toggleMenu}
                 >
                     About
                 </NavLink>
@@ -26,6 +28,7 @@ const NavItems = () => {
                 <NavLink
                     to="/#about"
                     className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
+                    onClick={toggleMenu}
                 >
                     Skills
                 </NavLink>
@@ -34,6 +37,7 @@ const NavItems = () => {
                 <NavLink
                     to="/#projects"
                     className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
+                    onClick={toggleMenu}
                 >
                     Projects
                 </NavLink>
@@ -42,6 +46,7 @@ const NavItems = () => {
                 <NavLink
                     to="/#contact"
                     className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
+                    onClick={toggleMenu}
                 >
                     Contact
                 </NavLink>
@@ -76,7 +81,7 @@ const Navbar = () => {
             </div>
             <div className={`nav-sidebar ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
                 <nav className='p-5'>
-                <NavItems />
+                <NavItems toggleMenu={toggleMenu}/>
                 </nav>
             </div>
         </header>

@@ -55,23 +55,7 @@ const Main = () => {
           />
 
         </div>
-
-        {/* 3D Elements */}
-        <div className="absolute inset-0 z-10">
-          <Canvas className="w-full h-full">
-            <Suspense fallback={<CanvasLoader />}>
-              <PerspectiveCamera makeDefault position={[0, 0, 30]} />
-              <group>
-                <Target position={sizes.targetPosition} />
-                <ReactLogo position={sizes.reactLogoPosition} />
-                <Rings position={sizes.ringPosition} />
-                <Cube position={sizes.cubePosition} />
-              </group>
-              <ambientLight intensity={1} />
-              <directionalLight position={[10, 10, 10]} intensity={0.5} />
-            </Suspense>
-          </Canvas>
-        </div>
+        
 
         {/* Button Section */}
         <div className="absolute bottom-7 left-0 right-0 w-full z-20 c-space">

@@ -12,17 +12,17 @@ const Contact = () => {
   });
 
   const validateEmail = (email) => {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email validation regex
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
     return emailPattern.test(email) && email.length >= 5;
   };
 
   const validateName = (name) => {
-    const namePattern = /^[a-zA-Z\s]+$/; // Only letters and spaces allowed
+    const namePattern = /^[a-zA-Z\s]+$/; 
     return namePattern.test(name);
   };
 
   const validateMessage = (message) => {
-    return message.trim().split(/\s+/).length >= 5; // Check if the message has at least 5 words
+    return message.trim().split(/\s+/).length >= 5; 
   };
   
   const handleValidation = () => {
