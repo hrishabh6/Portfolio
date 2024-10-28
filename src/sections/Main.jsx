@@ -20,7 +20,7 @@ const Main = () => {
         <div className="w-full h-full absolute inset-0 z-0">
           <video
             className="w-full mx-auto h-full object-cover"
-            src="/assets/Bgv.mp4"
+            src="/assets/bgv.mp4"
             autoPlay
             loop
             muted
