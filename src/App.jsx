@@ -6,6 +6,7 @@ import About from './sections/About';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const location = useLocation();
@@ -28,6 +29,7 @@ function App() {
       <Projects id="projects" />
       <Contact id="contact" />
       <Footer />
+      <Analytics />
     </main>
   );
 }

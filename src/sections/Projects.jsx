@@ -1,13 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
 import { myProjects } from './index'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Projects = () => {
     const [projectIndex, setProjectIndex] = useState(0);
     const currentProject = myProjects[projectIndex];
     const projectCount = myProjects.length;
-
+    const navigate = useNavigate()
     const handleNavigation = (direction) => {
         setProjectIndex((prevIndex) => {
             if (direction === 'previous') {
@@ -18,7 +18,7 @@ const Projects = () => {
         });
     };
 
-    return ( 
+    return (
         <section className='c-space my-20' id='projects'>
             <p className='head-text'>My Projects</p>
             <div className='grid lg:grid-col-2 grid-col-1 mt-12 w-full'>
@@ -31,8 +31,17 @@ const Projects = () => {
                     </div>
                     <div className='flex flex-col gap-5 text-white-600 my-5'>
                         <p className='text-white text-2xl font-semibold animatedText'>{currentProject.title}</p>
-                        <p className='animatedText'>{currentProject.desc}</p>
-                        <p className='animatedText'>{currentProject.subdesc}</p>
+                        <p className='paragraph-semibold'>{currentProject.desc}</p>
+                        <ul className='flex flex-col gap-2'>
+                            {Array.isArray(currentProject.subdesc) ? (
+                                currentProject.subdesc.map((feature, index) => (
+                                    <li key={index} className="animatedText list-disc">{feature}</li>
+                                ))
+                            ) : (
+                                <li className="animatedsubText">{currentProject.subdesc}</li>
+                            )}
+                        </ul>
+
                     </div>
                     <div className='flex items-center justify-between flex-wrap gap-5'>
                         <div className='flex items-center gap-3'>
@@ -49,7 +58,12 @@ const Projects = () => {
                     <div className='flex justify-between items-center mt-7'>
                         {/* Wrap handleNavigation in an arrow function to prevent immediate invocation */}
                         <button className='arrow-btn ' onClick={() => handleNavigation('previous')}> <img src="/assets/left-arrow.png" alt="Left navigation arrow" /> </button>
+                        <NavLink
+                            to='/#projects'
+                            >
                         <button className='arrow-btn' onClick={() => handleNavigation('next')} > <img src="/assets/right-arrow.png" alt="Left navigation arrow" /> </button>
+
+                        </NavLink>
                     </div>
                 </div>
             </div>
