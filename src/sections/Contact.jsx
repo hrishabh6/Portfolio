@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -91,9 +91,9 @@ const Contact = () => {
         />
 
         <div className="contact-container flex flex-col items-center p-5 bg-opacity-90 rounded-lg shadow-lg max-w-xl w-full overflow-hidden">
-          <h3 className="head-text text-center">Let's talk</h3>
+          <h3 className="head-text text-center">Let&apos;s talk</h3>
           <p className="text-lg text-white-600 mt-3 text-center">
-            Feel free to reach out! Let's build something great together.
+            Feel free to reach out! Let&apos;s build something great together.
           </p>
 
           <form ref={form} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7 w-full">
