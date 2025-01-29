@@ -1,13 +1,11 @@
-import React from 'react'
 import { useState } from 'react';
 import { myProjects } from './index'
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Projects = () => {
     const [projectIndex, setProjectIndex] = useState(0);
     const currentProject = myProjects[projectIndex];
     const projectCount = myProjects.length;
-    const navigate = useNavigate()
     const handleNavigation = (direction) => {
         setProjectIndex((prevIndex) => {
             if (direction === 'previous') {
