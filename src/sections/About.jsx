@@ -1,16 +1,14 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Globe from 'react-globe.gl'
-import { useMediaQuery } from 'react-responsive'
 import Button from '../components/Button'
+import { mySkills, stillLearning } from '.'
 
 const About = () => {
 
     const [copy, setCopy] = useState(false)
     const [copyNumber, setCopyNumber] = useState(false)
 
-    const isSmall = useMediaQuery({ maxWidth: 440 });
-    const isMobile = useMediaQuery({ maxWidth: 768 });
-    const isTablet = useMediaQuery({ maxWidth: 1024, minWidth: 768 });
+
 
     const handleCopy = () => {
         navigator.clipboard.writeText('hrishabhjoshi123@gmail.com')
@@ -29,7 +27,7 @@ const About = () => {
     }
 
     return (
-        <section className='c-space my-20' id='about'>
+        <section className='flex c-space my-20' id='about'>
             <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 h-full'>
                 {/* Profile Image Section */}
                 <div className='col-span-1'>
@@ -37,7 +35,7 @@ const About = () => {
                         <img src="/assets/pfp.png" alt="grid-1" className='w-full sm:h-[276px] h-auto object-contain' />
                         <div>
                             <p className='grid-headtext'>Hi, I am Hrishabh Joshi</p>
-                            <p className='grid-subtext'>A web developer skilled in front-end and back-end technologies like React, Node.js, Java, and Tailwind CSS. I enjoy building dynamic, responsive web applications and solving coding challenges in Data Structures and Algorithms. Currently, I'm exploring Spring Boot and Android development to enhance my full-stack capabilities.</p>
+                            <p className='grid-subtext'>A web developer skilled in front-end and back-end technologies like React, Node.js, Java, and Tailwind CSS. I enjoy building dynamic, responsive web applications and solving coding challenges in Data Structures and Algorithms. Currently, I&apos;m exploring Spring Boot and Android development to enhance my full-stack capabilities.</p>
                         </div>
                     </div>
                 </div>
@@ -49,25 +47,23 @@ const About = () => {
                         <div className='grid-subtext'>
                             <ul className='flex flex-col gap-3 justify-center'>
                                 <li>Primary Techstack And tools:
-                                    <ul className='flex flex-wrap gap-1 items-center'>
-                                        {/* Tech stack items */}
-                                        <li className='flex flex-col items-center justify-center m-3'>
-                                            <img src="/assets/logos/react.webp" alt="" className='h-10' />React
-                                        </li>
-                                        <li className='flex flex-col gap-3 items-center justify-center m-3'><img src="/assets/logos/node.webp" alt="" className='h-10' />NodeJs </li>
-                                        <li className='flex flex-col gap-3 items-center justify-center m-3'><img src="/assets/logos/mongodb.webp" alt="" className='h-10' />MongoDB </li>
-                                        <li className='flex flex-col gap-3 items-center justify-center m-3'><img src="/assets/logos/tailwind.webp" alt="" className='h-10' />Tailwind </li>
-                                        <li className='flex flex-col gap-3 items-center justify-center m-3'><img src="/assets/logos/express.webp" alt="" className='h-10 invert' />ExpressJS </li>
-                                        <li className='flex flex-col gap-3 items-center justify-center m-3'><img src="/assets/logos/postman.svg" alt="" className='h-10' />Postman </li>
-                                        <li className='flex flex-col gap-3 items-center justify-center m-3'><img src="/assets/logos/git.webp" alt="" className='h-10' />GIT</li>
+                                    <ul className="flex flex-wrap gap-1 items-center">
+                                        {mySkills.map(({ skill, icon, invert }, index) => (
+                                            <li key={index} className="flex flex-col items-center justify-center m-3 max-w-14 flex-wrap">
+                                                <img src={icon} alt={skill} className={`h-10 ${invert ? "invert" : ""}`} />
+                                                <span>{skill}</span>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </li>
                                 <li>Also Familiar with:
-                                    <ul className='flex flex-wrap gap-1 items-center'>
-                                        <li className='flex flex-col items-center justify-center m-3'>
-                                            <img src="/assets/logos/java.png" alt="" className='h-10' />Java
-                                        </li>
-                                        <li className='flex flex-col gap-3 items-center justify-center m-3'><img src="/assets/logos/springboot.png" alt="" className='h-10' />SpringBoot</li>
+                                    <ul className="flex flex-wrap gap-1 items-center">
+                                        {stillLearning.map(({ skill, icon, rounded }, index) => (
+                                            <li key={index} className="flex flex-col items-center justify-center m-3 gap-1">
+                                                <img src={icon} alt={skill} className={`h-10 ${rounded ? "rounded-xl" : ""}`} />
+                                                <span>{skill}</span>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </li>
                             </ul>

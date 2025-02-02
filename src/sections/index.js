@@ -154,3 +154,24 @@ export const myProjects = [
 
 ];
 
+export const mySkills = [
+  { skill: "NextJs", icon: "/assets/logos/nextjs.svg" },
+  { skill: "React", icon: "/assets/logos/react.webp" },
+  { skill: "NodeJs", icon: "/assets/logos/node.webp" },
+  { skill: "PostgreSQL", icon: "/assets/logos/postgreSQL.svg" },
+  { skill: "MongoDB", icon: "/assets/logos/mongodb.webp" },
+  { skill: "Tailwind", icon: "/assets/logos/tailwind.webp" },
+  { skill: "ExpressJS", icon: "/assets/logos/express.webp", invert: true },
+  { skill: "Postman", icon: "/assets/logos/postman.svg" },
+  { skill: "GIT", icon: "/assets/logos/git.webp" }
+];
+
+export const stillLearning = [
+  { skill: "Java", icon: "/assets/logos/java.png" },
+  { skill: "Drizzle ORM", icon: "/assets/logos/drizzle.png", rounded: true },
+  { skill: "Redis", icon: "/assets/logos/redis.svg", rounded: true },
+  { skill: "Docker", icon: "/assets/logos/docker.svg", rounded: true }
+];
+
+
+
