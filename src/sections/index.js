@@ -158,7 +158,7 @@ export const mySkills = [
   { skill: "NextJs", icon: "/assets/logos/nextjs.svg" },
   { skill: "React", icon: "/assets/logos/react.webp" },
   { skill: "NodeJs", icon: "/assets/logos/node.webp" },
-  { skill: "PostgreSQL", icon: "/assets/logos/postgreSQL.svg" },
+  { skill: "Postgres", icon: "/assets/logos/postgreSQL.svg" },
   { skill: "MongoDB", icon: "/assets/logos/mongodb.webp" },
   { skill: "Tailwind", icon: "/assets/logos/tailwind.webp" },
   { skill: "ExpressJS", icon: "/assets/logos/express.webp", invert: true },
@@ -171,6 +171,14 @@ export const stillLearning = [
   { skill: "Drizzle ORM", icon: "/assets/logos/drizzle.png", rounded: true },
   { skill: "Redis", icon: "/assets/logos/redis.svg", rounded: true },
   { skill: "Docker", icon: "/assets/logos/docker.svg", rounded: true }
+];
+
+export const navItems = [
+  { label: "Home", path: "/#home" },
+  { label: "About", path: "/#about" },
+  { label: "Resume", path: "https://drive.google.com/file/d/1EUd_beITfbYS3Qxo-vbU4Kz8kJVaJO_h/view?usp=sharing" },
+  { label: "Projects", path: "/#projects" },
+  { label: "Contact", path: "/#contact" }
 ];
 
 

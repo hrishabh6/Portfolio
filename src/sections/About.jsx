@@ -49,7 +49,7 @@ const About = () => {
                                 <li>Primary Techstack And tools:
                                     <ul className="flex flex-wrap gap-1 items-center">
                                         {mySkills.map(({ skill, icon, invert }, index) => (
-                                            <li key={index} className="flex flex-col items-center justify-center m-3 max-w-14 flex-wrap">
+                                            <li key={index} className="flex flex-col items-center justify-center m-3 md:max-w-14  flex-wrap">
                                                 <img src={icon} alt={skill} className={`h-10 ${invert ? "invert" : ""}`} />
                                                 <span>{skill}</span>
                                             </li>

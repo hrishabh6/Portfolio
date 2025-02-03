@@ -1,57 +1,23 @@
-import React from 'react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom'; // Import NavLink
+import { navItems } from '.';
 
 
 const NavItems = ({toggleMenu}) => {
     return (
-        <ul className='nav-ul'>
-            <li className='nav-li'>
-                <NavLink
-                    to="/#home"
-                    className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
-                    onClick={toggleMenu}
-                >
-                    Home
-                </NavLink>
-            </li>
-            <li className='nav-li'>
-                <NavLink
-                    to="/#about"
-                    className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
-                    onClick={toggleMenu}
-                >
-                    About
-                </NavLink>
-            </li>
-            <li className='nav-li'>
-                <NavLink
-                    to="/#about"
-                    className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
-                    onClick={toggleMenu}
-                >
-                    Skills
-                </NavLink>
-            </li>
-            <li className='nav-li'>
-                <NavLink
-                    to="/#projects"
-                    className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
-                    onClick={toggleMenu}
-                >
-                    Projects
-                </NavLink>
-            </li>
-            <li className='nav-li'>
-                <NavLink
-                    to="/#contact"
-                    className={({ isActive }) => isActive ? "active-class" : "inactive-class"}
-                    onClick={toggleMenu}
-                >
-                    Contact
-                </NavLink>
-            </li>
-        </ul>
+        <ul className="nav-ul">
+        {navItems.map(({ label, path }, index) => (
+          <li key={index} className="nav-li">
+            <NavLink
+              to={path}
+              className={({ isActive }) => (isActive ? "active-class" : "inactive-class")}
+              onClick={toggleMenu}
+            >
+              {label}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
     );
 };
 
