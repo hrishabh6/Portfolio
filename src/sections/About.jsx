@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Globe from 'react-globe.gl'
 import Button from '../components/Button'
 import { mySkills, stillLearning } from '.'
+import {  NavLink } from 'react-router-dom'
 
 const About = () => {
 
@@ -90,7 +91,8 @@ const About = () => {
                         <div>
                             <p className="grid-headtext">I am based in Delhi, India &#x1F4CD;</p>
                             <p className="grid-subtext">I am open to work remotely across most of the timezones.</p>
-                            <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+                            <NavLink to={`/#contact`}><Button name="Contact Me" isBeam containerClass="w-full mt-10" /></NavLink>
+                            
                         </div>
                     </div>
                 </div>
