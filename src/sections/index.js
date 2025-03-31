@@ -1,5 +1,52 @@
 export const myProjects = [
   {
+    title: "HorizonAI - AI-Powered PPT Generator",
+    desc: "A full-fledged AI-powered SaaS application that enables users to create stunning presentations effortlessly using advanced prompt engineering techniques. Built a custom presentation editor with rich text formatting, drag-and-drop functionality, and AI-powered content generation.Devoverflow is a full-stack web application inspired by Stack Overflow, designed for developers to ask, answer, and discuss technical questions. It features user authentication, question posting, answer submissions, and voting functionality.",
+    subdesc: [
+      "Custom Presentation Editor : Built from scratch with paragraphs, bullet points, headings, and multi-column layouts.",
+      "Drag-and-Drop Functionality : Implemented both custom and library-based solutions for seamless slide arrangement.",
+      "AI-Powered Content Generation : Integrated OpenAI to generate relevant, context-aware presentation content.",
+      "Dynamic Theme Support : Designed multiple themes for enhanced customization and visual appeal.",
+      "Payment Integration : Integrated LemonSqueezy for secure transactions and SaaS-based monetization.",
+      "Optimized Performance : Used Next.js, Zustand, Prisma, and Clerk Auth for scalability, responsiveness, and security.",
+      
+    ],
+    
+    href: 'https://horizonai-builder.vercel.app ',
+    texture: '/textures/project/project1.mp4',
+    logo: '/assets/logo.webp',
+    logoStyle: {
+      backgroundColor: 'linear-gradient(120deg, #E87496 30%, #A5C6E8 60%, #D9C8EC 100%)',
+      border: '0.2px solid #71A9DE',
+      boxShadow: '0px 0px 60px 0px #AA3C304D',
+    },
+    spotlight: '/assets/spotlight1.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Next.js',
+        path: '/assets/logos/nextjs.svg',
+      },
+      {
+        id: 2,
+        name: 'Prisma',
+        path: '/assets/logos/prisma.webp',
+        className: "invert"
+      },
+      {
+        id: 3,
+        name: 'OpenAI',
+        path: 'assets/logos/openai.svg',
+        className: "invert"
+      },
+      {
+        id: 4,
+        name: 'LemonSqueezy',
+        path: '/assets/logos/lemon-squeezy.svg',
+      },
+    ],
+  },
+  {
     title: "Devoverflow - A Stack Overflow Clone",
     desc: "Devoverflow is a full-stack web application inspired by Stack Overflow, designed for developers to ask, answer, and discuss technical questions. It features user authentication, question posting, answer submissions, and voting functionality.",
     subdesc: [
@@ -39,8 +86,8 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: 'node.js',
-        path: '/assets/logos/node.webp',
+        name: 'Docker',
+        path: '/assets/logos/docker.svg',
       },
     ],
   },
@@ -121,36 +168,7 @@ export const myProjects = [
 
     ],
   },
-  {
-    title: 'Taskit - A functional TODO list',
-    desc: 'Taskit is a functional todo list app that offers user to create, update, delete and mark as done tasks. It is responsive and also have a feature to filter tasks based on their status. It don\'t use any database and store data in local storage.',
-    subdesc:
-      'Built as a personal project, Taskit is a showcase of my skills in front-end development. It is built using React.js, TailwindCSS, I built it to refine my skills in React.js and to create a functional web application.',
-    href: 'https://todo-list-seven-cyan-77.vercel.app/',
-    texture: '/textures/project/project3.mp4',
-    logo: '/assets/Taskit.svg',
-    logoStyle: {
-      backgroundColor: '#60f5a1',
-      background:
-        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-      border: '0.2px solid rgba(208, 213, 221, 1)',
-      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
-    },
-    spotlight: '/assets/spotlight3.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/logos/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: '/assets/logos/tailwindcss.png',
-      },
-
-    ],
-  },
+  
 
 ];
 
@@ -176,7 +194,7 @@ export const stillLearning = [
 export const navItems = [
   { label: "Home", path: "/#home" },
   { label: "About", path: "/#about" },
-  { label: "Resume", path: "https://drive.google.com/file/d/1EUd_beITfbYS3Qxo-vbU4Kz8kJVaJO_h/view?usp=sharing" },
+  { label: "Resume", path: "https://docs.google.com/document/d/1gttbR0I73PllccTuqd8JwSXxq9DMocqW_cMt6P69xOw/edit?tab=t.0" },
   { label: "Projects", path: "/#projects" },
   { label: "Contact", path: "/#contact" }
 ];
