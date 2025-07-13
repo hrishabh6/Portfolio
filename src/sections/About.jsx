@@ -31,15 +31,28 @@ const About = () => {
         <section className='flex c-space my-20' id='about'>
             <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 h-full'>
                 {/* Profile Image Section */}
-                <div className='col-span-1'>
-                    <div className='grid-container'>
-                        <img src="/assets/pfp.png" alt="grid-1" className='w-full sm:h-[276px] h-auto object-contain' />
-                        <div>
-                            <p className='grid-headtext'>Hi, I am Hrishabh Joshi</p>
-                            <p className='grid-subtext'>A web developer skilled in front-end and back-end technologies like React, Node.js, Java, and Tailwind CSS. I enjoy building dynamic, responsive web applications and solving coding challenges in Data Structures and Algorithms. Currently, I&apos;m exploring Spring Boot and Android development to enhance my full-stack capabilities.</p>
+                <div className="col-span-1">
+                    <div className="flex flex-col items-center gap-4 p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-800 transition hover:scale-[1.01]">
+                        <img
+                            src="/assets/pfpb.jpg"
+                            alt="Hrishabh's Avatar"
+                            className="w-40 h-40 sm:w-52 sm:h-52 object-cover rounded-full border-4 border-zinc-700 shadow-md"
+                        />
+
+                        <div className="text-center">
+                            <p className="text-xl sm:text-2xl font-semibold text-white mb-1">
+                                Hi, I’m <span className="text-purple-400">Hrishabh Joshi</span>
+                            </p>
+                            <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                                A web developer skilled in front-end and back-end technologies like
+                                React, Node.js, Java, and Tailwind CSS. I enjoy building dynamic,
+                                responsive web apps and solving coding challenges in DSA. Currently
+                                exploring Spring Boot and Android to enhance my full-stack skills.
+                            </p>
                         </div>
                     </div>
                 </div>
+
 
                 {/* Tech Stack Section */}
                 <div className='col-span-1'>
