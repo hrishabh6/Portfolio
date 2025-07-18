@@ -194,7 +194,7 @@ export const stillLearning = [
 export const navItems = [
   { label: "Home", path: "/#home" },
   { label: "About", path: "/#about" },
-  { label: "Resume", path: "https://docs.google.com/document/d/1gttbR0I73PllccTuqd8JwSXxq9DMocqW_cMt6P69xOw/edit?tab=t.0" },
+  { label: "Resume", path: "https://drive.google.com/file/d/126kmFyJMhgZ8j-9AmtsDeo0_lkx51Jvu/view?usp=sharing" },
   { label: "Projects", path: "/#projects" },
   { label: "Contact", path: "/#contact" }
 ];
