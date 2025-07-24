@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Globe from 'react-globe.gl'
 import Button from '../components/Button'
 import { mySkills, stillLearning } from '.'
-import {  NavLink } from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 
 const About = () => {
 
@@ -32,24 +32,34 @@ const About = () => {
             <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 h-full'>
                 {/* Profile Image Section */}
                 <div className="col-span-1">
-                    <div className="flex flex-col items-center gap-4 p-6 bg-zinc-900 rounded-3xl shadow-xl border border-zinc-800 transition hover:scale-[1.01]">
-                        <img
-                            src="/assets/pfpb.jpg"
-                            alt="Hrishabh's Avatar"
-                            className="w-40 h-40 sm:w-52 sm:h-52 object-cover rounded-full border-4 border-zinc-700 shadow-md"
-                        />
+                    <div className="grid-container">
+                        {/* Centered image container */}
+                        <div className="flex justify-center">
+                            <img
+                                src="/assets/pfpb.jpg"
+                                alt="Hrishabh's Avatar"
+                                className="w-40 h-40 sm:w-52 sm:h-52 object-cover rounded-full border-4 border-zinc-700 shadow-md"
+                            />
+                        </div>
 
-                        <div className="text-center">
-                            <p className="text-xl sm:text-2xl font-semibold text-white mb-1">
-                                Hi, I’m <span className="text-purple-400">Hrishabh Joshi</span>
+                        {/* Centered text content */}
+                        <div className="text-center flex-1">
+                            <p className="text-xl sm:text-2xl font-semibold text-white mb-3">
+                                Hi, I&#39;m <span className="text-purple-400">Hrishabh Joshi</span>
                             </p>
                             <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                                A web developer skilled in front-end and back-end technologies like
-                                React, Node.js, Java, and Tailwind CSS. I enjoy building dynamic,
-                                responsive web apps and solving coding challenges in DSA. Currently
-                                exploring Spring Boot and Android to enhance my full-stack skills.
+                                Full Stack Developer focused on building performant, scalable, and production-ready backend systems.
+                                Experienced in Java, Spring Boot microservices, AI integrations, real-time communication, and deployment pipelines.
+                                Passionate about clean architecture, developer efficiency, and solving real-world challenges.
                             </p>
                         </div>
+
+                        {/* Centered button */}
+
+                                <a  target="_blank" rel="noopener noreferrer" href={`https://drive.google.com/file/d/1dXfjGPPC56bU68ju67fKE7vJ1FYVxQlp/view?usp=sharing`}>
+                                    <Button name="See My Resume" isBeam containerClass="w-full mt-10" />
+                                </a>
+
                     </div>
                 </div>
 
@@ -72,9 +82,9 @@ const About = () => {
                                 </li>
                                 <li>Also Familiar with:
                                     <ul className="flex flex-wrap gap-1 items-center">
-                                        {stillLearning.map(({ skill, icon, rounded }, index) => (
+                                        {stillLearning.map(({ skill, icon, rounded, inverted }, index) => (
                                             <li key={index} className="flex flex-col items-center justify-center m-3 gap-1">
-                                                <img src={icon} alt={skill} className={`h-10 ${rounded ? "rounded-xl" : ""}`} />
+                                                <img src={icon} alt={skill} className={`h-10 ${rounded ? "rounded-xl" : ""} ${inverted ? "invert" : ""}`} />
                                                 <span>{skill}</span>
                                             </li>
                                         ))}

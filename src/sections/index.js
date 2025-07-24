@@ -237,28 +237,28 @@ export const myProjects = [
 ];
 
 export const mySkills = [
+  {skill: "Spring", icon: "/assets/logos/springboot.png", rounded: true},
   { skill: "NextJs", icon: "/assets/logos/nextjs.svg" },
-  { skill: "React", icon: "/assets/logos/react.webp" },
+  { skill: "Redis", icon: "/assets/logos/redis.svg", rounded: true },
+  {skill: "Kafka", icon: "/assets/logos/kafka.png", rounded: true, invert: true },
   { skill: "NodeJs", icon: "/assets/logos/node.webp" },
   { skill: "Postgres", icon: "/assets/logos/postgreSQL.svg" },
   { skill: "MongoDB", icon: "/assets/logos/mongodb.webp" },
   { skill: "Tailwind", icon: "/assets/logos/tailwind.webp" },
-  { skill: "ExpressJS", icon: "/assets/logos/express.webp", invert: true },
   { skill: "Postman", icon: "/assets/logos/postman.svg" },
   { skill: "GIT", icon: "/assets/logos/git.webp" }
 ];
 
 export const stillLearning = [
-  { skill: "Java", icon: "/assets/logos/java.png" },
-  { skill: "Drizzle ORM", icon: "/assets/logos/drizzle.png", rounded: true },
-  { skill: "Redis", icon: "/assets/logos/redis.svg", rounded: true },
-  { skill: "Docker", icon: "/assets/logos/docker.svg", rounded: true }
+  { skill: "Python", icon: "/assets/logos/python.png" },
+  { skill: "Docker", icon: "/assets/logos/docker.svg", rounded: true },
+  {skill: "AWS", icon: "/assets/logos/aws.png", rounded: true, invert: true },
 ];
 
 export const navItems = [
   { label: "Home", path: "/#home" },
   { label: "About", path: "/#about" },
-  { label: "Resume", path: "https://drive.google.com/file/d/126kmFyJMhgZ8j-9AmtsDeo0_lkx51Jvu/view?usp=sharing" },
+  { label: "Resume", path: "https://drive.google.com/file/d/1dXfjGPPC56bU68ju67fKE7vJ1FYVxQlp/view?usp=sharing" },
   { label: "Projects", path: "/#projects" },
   { label: "Contact", path: "/#contact" }
 ];
