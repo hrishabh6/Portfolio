@@ -1,4 +1,68 @@
 export const myProjects = [
+
+  {
+    title: "RideWise - Scalable Uber Backend with Microservices",
+    desc: "A highly scalable backend system inspired by Uber, built entirely using Spring Boot and microservices architecture. Designed to simulate real-world ride-booking operations including user authentication, real-time driver location tracking, ride management, and asynchronous communication using Kafka and WebSockets.",
+    subdesc: [
+      "JWT-Based Auth Service : Implements complete user authentication and authorization with Spring Security, JWT tokens, and centralized request preprocessing middleware.",
+      "Location Management via Redis : Uses Redis’ geospatial queries to efficiently track and retrieve nearby drivers in real-time.",
+      "WebSocket Notifications : Real-time ride request system powered by WebSocket connections and Kafka messaging for notifying drivers instantly.",
+      "Kafka Integration for Ride Flow : Kafka topics handle driver responses, making ride acceptance and creation asynchronous and scalable.",
+      "Entity Service as Maven Library : A shared Maven-published service library for managing common entities and Flyway-based database migrations across all services.",
+      "Service Registry with Eureka : Centralized service discovery via Eureka, enabling dynamic service registration and smooth inter-service communication.",
+      "Robust Booking Workflow : BookingService orchestrates location discovery, driver communication, and ride confirmation through a decoupled event-driven pipeline.",
+      "Clean Modular Codebase : Each service is independently deployable, version-controlled, and follows SOLID principles with proper logging and exception handling."
+    ],
+    href: "https://github.com/your-username/ridewise-microservices", // replace with actual link
+    texture: "/textures/project/ridewise.mp4",
+    logo: "/assets/RidemeLogo.jpg",
+    logoStyle: {
+      backgroundColor: "linear-gradient(120deg, #FFC371 0%, #FF5F6D 100%)",
+      border: "0.2px solid #FF7A59",
+      boxShadow: "0px 0px 60px 0px #FF5F6D66"
+    },
+    spotlight: "/assets/spotlight5.png",
+    tags: [
+      {
+        id: 1,
+        name: "Spring Boot",
+        path: "/assets/logos/springboot.png",
+      },
+      {
+        id: 2,
+        name: "Redis",
+        path: "/assets/logos/redis.svg"
+      },
+      {
+        id: 3,
+        name: "Kafka",
+        path: "/assets/logos/kafka.png",
+        className: "invert"
+      },
+      {
+        id: 4,
+        name: "MySQL",
+        path: "/assets/logos/mysql.png",
+        className: "h-6"
+      },
+      {
+        id: 5,
+        name: "Eureka",
+        path: "/assets/logos/eureka.png"
+      },
+      {
+        id: 6,
+        name: "Flyway",
+        path: "/assets/logos/flyway.jpeg"
+      },
+      {
+        id: 7,
+        name: "Retrofit",
+        path: "/assets/logos/retrofit.jpeg"
+      }
+    ]
+  },
+
   {
     title: "HorizonAI - AI-Powered PPT Generator",
     desc: "A full-fledged AI-powered SaaS application that enables users to create stunning presentations effortlessly using advanced prompt engineering techniques. Built a custom presentation editor with rich text formatting, drag-and-drop functionality, and AI-powered content generation.Devoverflow is a full-stack web application inspired by Stack Overflow, designed for developers to ask, answer, and discuss technical questions. It features user authentication, question posting, answer submissions, and voting functionality.",
